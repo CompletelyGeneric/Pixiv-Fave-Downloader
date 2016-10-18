@@ -11,8 +11,8 @@ Setup
     pip install pixivpy
 
 Modify config.json with your username, password, and desired save directory.  
-subdir_threshold (Default: 0) determines how many pages a work must have before it creates a subdirectory for that work.   
-A value of 0 will disable this feature  
+subdir_threshold (Default: 0) determines how many pages a work must have before it creates a subdirectory for that work.  
+Each user can set this value independantly with a value of 0 disabling this feature    
 The directory naming structure for created subdirectories is: "artist name - artist's profile ID"  
 
 

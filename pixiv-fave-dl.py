@@ -24,7 +24,7 @@ for user in range(len(config["username"])):
     url = my_id.work.image_urls['large']
     for p in range(my_id.work.page_count):
       page_url = url[:-5] + str(p) + url[-4:]
-      if (my_id.work.page_count >= config['subdir_threshold']) and (config['subdir_threshold'] != 0) : 
+      if (my_id.work.page_count >= config['subdir_threshold'][user]) and (config['subdir_threshold'][user] != 0) : 
         subdir_path = download_path + os.sep + my_id.work.user.name + " - " + str(my_id.work.id)
         if not os.path.exists(subdir_path):
           os.makedirs(subdir_path)
