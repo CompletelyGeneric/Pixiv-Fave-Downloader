@@ -3,9 +3,10 @@
 from pixivpy3 import *
 import json
 import os
+from datetime import datetime
 
 api = PixivAPI()
-with open('config.json', 'r') as f:
+with open('config.json', 'r') as f: #config file location
   config = json.load(f)
 
 download_path = config['download_path']
@@ -30,10 +31,10 @@ for user in range(len(config["username"])):
           os.makedirs(subdir_path)
       else:
         subdir_path = download_path 
-      api.download(page_url, path= subdir_path + os.sep + os.path.basename(page_url))
-      print('Downloaded [ Fave ID: ' + str(my_id.work.favorite_id) + ' ID: ' + str(my_id.work.id) + ' Page: ' + str(p) + ' ] for user ' + config['username'][user])
+      api.download(page_url, path=subdir_path + os.sep + os.path.basename(page_url))
+      print('[' + datetime.now().strftime( '%d/%m/%Y %H:%M:%S') + '] \033[1;32;40m::\033[0;37;40m ' + 'Downloaded [ Fave ID: ' + str(my_id.work.favorite_id) + ' ID: ' + str(my_id.work.id) + ' Page: ' + str(p) + ' ] for user ' + config['username'][user])
   config['last_fave_id'][user] = str(my_ids[0].work.favorite_id)
 
-print("End of new faves")  
+print('[' + datetime.now().strftime( '%d/%m/%Y %H:%M:%S') + '] \033[1;32;40m::\033[0;37;40m ' + 'End of new faves')  
 with open('config.json', 'w') as f:
   json.dump(config, f)
