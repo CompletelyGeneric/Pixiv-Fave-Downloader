@@ -1,1 +1,1 @@
-{"username": ["username1","username2"], "subdir_threshold": [0,0], "password": ["user_1_password","user_2_password"], "last_fave_id": ["0","0"], "download_path": "some_directory"}
+{"username": ["username_1","username_2"], "password": ["user_1_password","user_2_password"], "last_fave_id": ["0","0"], "download_path": "some_directory"}
